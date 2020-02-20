@@ -4,9 +4,9 @@ files:
   - source: /
     destination: /home/ec2-user/projetos/financeiro-app/ 
 permissions:
-  - object: scripts
+  - object: /home/ec2-user/projetos/financeiro-app/scripts
     pattern: "**"            
-    mode: 775        
+    mode: 775     
     type:
       - file
 hooks:  
