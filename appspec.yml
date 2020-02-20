@@ -11,7 +11,7 @@ permissions:
       - file
 hooks:  
   AfterInstall:
-    - location: scripts/deploy-financeiro-app.sh      
+    - location: /home/ec2-user/projetos/financeiro-app/scripts/deploy-financeiro-app.sh      
   ApplicationStart:
-    - location: scripts/restart-nginx.sh
+    - location: /home/ec2-user/projetos/financeiro-app/scripts/restart-nginx.sh
       timeout: 3600
