@@ -3,6 +3,12 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/projetos/financeiro-app/ 
+permissions:
+  - object: /scripts
+    pattern: "**"            
+    mode: 775        
+    type:
+      - file
 hooks:  
   AfterInstall:
     - location: scripts/deploy-financeiro-app.sh      
