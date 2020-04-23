@@ -6,7 +6,11 @@
         dark
         >
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-        <v-toolbar-title>Financeiro</v-toolbar-title>
+        <v-toolbar-title>
+            <router-link :to="{ name: 'Home' }" class="title-link">
+                Financeiro
+            </router-link>
+        </v-toolbar-title>
 
         <v-spacer></v-spacer>
 
@@ -54,7 +58,11 @@
                     <v-list-item-icon>
                     <v-icon>mdi-currency-usd</v-icon>
                     </v-list-item-icon>
-                    <v-list-item-title>Lançamento</v-list-item-title>
+                    <v-list-item-title>
+                        <router-link :to="{ name: 'Entry' }" class="menu-item">
+                            Lançamentos
+                        </router-link>
+                    </v-list-item-title>
                 </v-list-item>
 
                 <v-list-item>
@@ -95,3 +103,15 @@ export default Vue.extend({
   }),
 });
 </script>
+
+<style scoped>
+    .title-link {
+        color:#FFFFFF;
+        text-decoration: none;
+    }
+
+    .menu-item {
+        color: #313131;
+        text-decoration: none;
+    }
+</style>

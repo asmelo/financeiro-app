@@ -1,6 +1,11 @@
 <template>
   <v-app>
     <Menu/>
+    <transition name="fade">
+      <div class="gap">
+        <router-view></router-view>
+      </div>
+    </transition>
   </v-app>
 </template>
 
@@ -14,5 +19,18 @@ export default Vue.extend({
   components: {
     Menu,
   },
+
 });
 </script>
+
+<style>
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s
+    }
+    .fade-enter, .fade-leave-active {
+      opacity: 0
+    }
+    .gap {
+      margin-top: 50px;
+    }
+</style>

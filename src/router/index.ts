@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';
+import EntryCreate from '../model/entry/Create.vue';
+import EntryEdit from '../model/entry/Edit.vue';
+import EntryIndex from '../model/entry/Index.vue';
 
 Vue.use(VueRouter);
 
@@ -11,12 +14,20 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/entries/index',
+    name: 'Entry',
+    component: EntryIndex,
+  },
+  { path: '*', redirect: '/entries/index' },
+  {
+    name: 'Create Entry',
+    path: '/entries/create',
+    component: EntryCreate,
+  },
+  {
+    name: 'Edit Entry',
+    path: '/entries/edit',
+    component: EntryEdit,
   },
 ];
 
